@@ -1,0 +1,19 @@
+{
+  "name": "isv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pnpm ts-node src/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node-fetch": "^2.6.4",
+    "graph-fs": "^1.0.2",
+    "node-fetch": "2",
+    "puppeteer": "^20.7.4",
+    "ts-node": "^10.9.1"
+  }
+}
