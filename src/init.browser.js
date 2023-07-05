@@ -17,19 +17,3 @@ async function graphql(body, auth) {
 }
 
 window.graphql = graphql;
-
-async function strictFetch(...params) {
-	const response = await fetch(...params);
-	if (!response.ok) {
-		console.error(response.status, ' ', response.statusText);
-		throw new FetchError(response);
-	}
-}
-
-
-class FetchError extends Error {
-	constructor(response) {
-		super(response.statusText);
-		this.response = response;
-	}
-}
