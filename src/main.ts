@@ -26,14 +26,16 @@ async function main() {
 
 
 	const auth = await authResponse.json();
+
 	await page.evaluate(initJs);
-	function graphql(query: string): Promise<any> {
+	function graphql(query: object): Promise<any> {
 		// @ts-ignore
 		return page.evaluate((query, auth) => window.graphql(query, auth), query, auth);
 	}
 
 
-	const response = await graphql("{__typename}");
+	const response = await graphql({ query: "{__typename}" });
+	console.log(response);
 
 }
 
